@@ -1,0 +1,23 @@
+{
+  "principle": "minimum privilege at operation and recipient level",
+  "public_web": {
+    "access": "read-only public pages",
+    "authenticated_systems": []
+  },
+  "gmail_production": {
+    "required_operations": ["search/read prior Radar ALyC messages", "send report"],
+    "recipient_allowlist": "exact owner account configured privately",
+    "prohibited": ["unrelated mailbox reading", "delete", "trash", "labels", "drafts", "third-party forwarding"],
+    "platform_scope_note": "ChatGPT Work abstracts OAuth scopes. The connector authorization may be broader than the operations exercised; the prompt and recipient allowlist are compensating controls."
+  },
+  "gmail_portable_reference": {
+    "oauth_scope": "https://www.googleapis.com/auth/gmail.send",
+    "credential_storage": "local token file excluded from repository",
+    "recipient_control": "RADAR_ALLOWED_RECIPIENT must exactly match --to"
+  },
+  "cnv_arca_uif_bcra": {
+    "access": "public web only",
+    "credentials": false,
+    "write_or_submission_permission": false
+  }
+}
