@@ -12,16 +12,16 @@
   },
   "automation": {
     "path": "config/versions/automation_v1.json",
-    "sha256": "eb9b5d707d022823fe096d1066ea6ed8b5de2160e4b0571f692ec83ea58bbbac",
+    "sha256": "171df9776a8430b7ce4e1258cdedbcbbd1987f8033445237ca228c1e2fd5a70f",
     "status": "historical configuration reconstructed from versioned contract and documented delivery trace; the platform did not expose a raw versioned task export"
   },
   "input": {
     "path": "corridas/corrida_01/entrada_ejecutada.md",
-    "sha256": "eeb880a9d0552a42515c6f2fba3d70f7aa4fa5cc0a322b4a8eb09c69cb0d8fd7"
+    "sha256": "5c76a2693e47b5e7bceacc07a38c1ddec056b858fb40ab5bf05ed6088d1f90dc"
   },
   "output": {
     "path": "corridas/corrida_01/salida_original_redactada.txt",
-    "sha256": "bdcf5d257e582b18ff5f7005684071cd5d336dfe529fb97dd71e2a9c137b1e0a",
+    "sha256": "3620580b662e58a146ce4183048e4b25f93ddd434d66ec77a972b338a03ed84a",
     "privacy_transformation": "Only the exact private email address was replaced with [CUENTA_PRIVADA]. No report content was rewritten.",
     "publication_authorization": "Expressly authorized by the repository owner on 2026-09-11."
   },
