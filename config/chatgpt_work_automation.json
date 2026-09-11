@@ -1,0 +1,30 @@
+{
+  "implementation": "ChatGPT Work scheduled task",
+  "title": "Radar diario ALyC",
+  "status_at_evidence_date": "enabled",
+  "timezone": "America/Argentina/Buenos_Aires",
+  "schedule_ical": "BEGIN:VEVENT\nDTSTART;TZID=America/Argentina/Buenos_Aires:20260906T080000\nRRULE:FREQ=DAILY\nEND:VEVENT",
+  "timing_mode": "exact_schedule",
+  "production_prompt": "prompts/system_prompt.md + prompts/user_prompt.md",
+  "tools": [
+    {
+      "name": "public web search",
+      "purpose": "read public official, professional and sector sources",
+      "write_access": false
+    },
+    {
+      "name": "Gmail connector",
+      "purpose": "search/read only prior messages whose subject is Radar ALyC and send one report to the allowlisted owner",
+      "allowed_operations": ["search matching Radar ALyC emails", "read matching Radar ALyC emails", "send to allowlisted owner"],
+      "forbidden_operations": ["delete", "trash", "modify labels", "forward to third parties", "read unrelated email"]
+    }
+  ],
+  "recipient": "private allowlisted account; not stored in the public repository",
+  "evidence": [
+    "corridas/corrida_01/evidencia_envio.md",
+    "corridas/corrida_02/evidencia_envio.md",
+    "corridas/corrida_03/evidencia_envio.md",
+    "corridas/validacion_final/evidencia_envio.md"
+  ],
+  "portable_reference": "src/radar_agent.py"
+}
