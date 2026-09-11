@@ -5,5 +5,12 @@
   "hallazgos": 3,
   "formato": "text/html",
   "estado_envio": "ENVIADO",
+  "agent_version": "V2",
+  "system_prompt": "prompts/versions/system_prompt_v2.md",
+  "user_prompt": "prompts/versions/user_prompt_v2.md",
+  "automation_config": "config/chatgpt_work_automation.json",
+  "input": "corridas/corrida_02/entrada.md",
+  "output": "corridas/corrida_02/salida.md",
+  "delivery_trace": "corridas/corrida_02/evidencia_envio.md",
   "resultado_iteracion": "formato_corregido_ruido_detectado"
 }
