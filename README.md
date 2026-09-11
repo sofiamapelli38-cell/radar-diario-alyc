@@ -3,67 +3,65 @@
 **Trabajo final individual - Programación de y con Agentes de IA - MBA UCEMA 2026**
 
 **Autora:** Sofía Mapelli  
-**Estado:** sistema configurado; corridas reales y documentación final en preparación.
+**Estado:** sistema implementado, automatizado y validado con corridas reales.
 
 ## 1. Problema real
 
-Una persona que trabaja en Impuestos y Contabilidad de una ALyC necesita revisar diariamente fuentes regulatorias, impositivas, operativas y sectoriales. El relevamiento manual consume tiempo, puede dejar fuentes sin revisar y dificulta comparar lo detectado entre distintos días.
+El área de Impuestos y Contabilidad de una ALyC necesita revisar diariamente numerosas fuentes regulatorias, impositivas y profesionales. El relevamiento manual consume tiempo y puede omitir novedades relevantes entre información operativa de poco valor para el puesto.
 
 ## 2. Objetivo
 
-Construir un sistema agéntico que, todos los días, releve las publicaciones del día calendario anterior, identifique novedades relevantes para una ALyC argentina, las verifique y clasifique, genere un reporte estructurado y lo envíe por correo electrónico para revisión humana.
+Construir un agente que todos los días detecte, verifique y priorice novedades que puedan modificar o anticipar tareas impositivas, contables, societarias, regulatorias o de control de una ALyC argentina, y que envíe un correo claro para revisión humana.
 
-El sistema no reemplaza el criterio profesional ni toma decisiones regulatorias, impositivas, contables, operativas o de Compliance.
+## 3. Funcionamiento validado
 
-## 3. Alcance
+1. Se ejecuta diariamente a las 08:00, hora argentina.
+2. Releva el día calendario anterior.
+3. Hace un control de arrastre de los tres días hábiles anteriores para recuperar novedades importantes omitidas.
+4. Consulta fuentes oficiales, profesionales, periodísticas y sectoriales.
+5. Prioriza Impuestos, Contabilidad y regulación aplicable a la ALyC.
+6. Incluye como máximo cuatro novedades principales y una de innovación.
+7. Genera un correo HTML con prioridades, acciones sugeridas y enlaces clicables.
+8. Envía el resultado únicamente a la cuenta privada validada de la responsable.
+9. Conserva la decisión profesional y cualquier acción posterior bajo supervisión humana.
 
-El agente consulta tres grupos de fuentes:
+## 4. Fuentes
 
-1. **Oficiales:** CNV, ARCA, UIF, BCRA, BYMA, MAE, MAV, Caja de Valores, Boletín Oficial y otros organismos o mercados pertinentes.
-2. **Periodísticas y profesionales:** Errepar, iProfesional, El Cronista y otros medios especializados relevantes.
-3. **Sectoriales:** publicaciones públicas de ALyCs, mercados y fintechs sobre productos, integraciones tecnológicas, servicios, alianzas y cambios operativos.
+- **Oficiales:** CNV, ARCA, UIF, BCRA, Boletín Oficial, Argentina.gob.ar/Normativa, BYMA, MAE, MAV y Caja de Valores.
+- **Profesionales y periodísticas:** Errepar, Blog del Contador/SIAP, Consejo Profesional, iProfesional, El Cronista, Ámbito, iProUP y medios pertinentes.
+- **Sector e innovación:** ALyCs, mercados y fintechs, con foco en cambios tecnológicos e inteligencia artificial que puedan afectar el negocio o la forma de trabajar.
 
-Cada novedad se clasifica como `ACCIÓN`, `RIESGO`, `OPORTUNIDAD` o `ACTUALIZACIÓN`, con prioridad `ALTA`, `MEDIA` o `BAJA`.
+Las fuentes periodísticas se usan como señales. Cuando mencionan una norma, el agente busca también respaldo oficial.
 
-## 4. Funcionamiento
+## 5. Criterio de relevancia final
 
-1. La automatización se activa diariamente a las 08:00, hora argentina.
-2. Determina el día calendario anterior como fecha objetivo.
-3. Utiliza búsqueda web para consultar fuentes públicas.
-4. Verifica fecha, relevancia y respaldo de cada hallazgo.
-5. Elimina duplicados y genera un reporte Markdown con estructura fija.
-6. Envía el reporte por Gmail únicamente a la responsable configurada.
-7. Sofía revisa la salida antes de tomar cualquier decisión o compartirla.
+Se priorizan:
 
-## 5. Herramientas reales
+- normas CNV sobre agentes, categorías, compatibilidades, patrimonio, AIF, estados contables y auditoría;
+- cambios de ARCA o fiscos provinciales sobre IVA, Ganancias, retenciones, percepciones, facturación, IIBB y Convenio Multilateral;
+- cambios UIF/PLAFT con impacto en matrices, informes, documentación o directorio;
+- novedades contables, societarias y de auditoría;
+- cambios operativos sólo cuando generan una consecuencia concreta para Impuestos o Contabilidad;
+- como máximo una noticia relevante de IA, tecnología o innovación sectorial.
 
-- **Búsqueda web:** consulta de publicaciones y enlaces directos.
-- **Gmail:** envío del reporte diario a la responsable.
-- **Automatización programada:** ejecución diaria con zona horaria `America/Argentina/Buenos_Aires`.
+Se excluyen altas de especies, dividendos, eventos particulares de emisores, cotizaciones y contenido promocional, salvo impacto directo en el área.
 
-Las credenciales y la dirección privada de envío no se publican en este repositorio.
+## 6. Herramientas reales
 
-## 6. Entrada y salida
+- búsqueda web para consultar fuentes públicas;
+- Gmail para el envío automático;
+- automatización diaria en la zona horaria `America/Argentina/Buenos_Aires`.
 
-La entrada de cada corrida contiene la fecha objetivo y un identificador único. La salida es un reporte Markdown con:
-
-- datos de ejecución y cobertura;
-- resumen ejecutivo;
-- tabla estructurada de novedades;
-- control de calidad;
-- supervisión humana requerida;
-- estado del envío.
+Las credenciales y la dirección privada de envío no se publican.
 
 ## 7. Supervisión humana
 
-- **L3:** búsqueda, filtrado, clasificación, generación del reporte y envío automático a Sofía, con revisión posterior.
-- **L1:** recomendaciones preliminares de impacto, prioridad y acción sugerida, sujetas a validación.
-- **L0:** decisiones profesionales, presentaciones, registraciones, cambios operativos y comunicaciones a terceros.
+- **L3:** búsqueda, filtrado, clasificación, redacción y envío automático a Sofía.
+- **L1:** impacto, prioridad y acción sugerida como recomendaciones preliminares.
+- **L0:** presentaciones, registraciones, cambios de sistemas, operaciones y comunicaciones a terceros.
 - **Responsable final:** Sofía Mapelli.
 
-El email automático es informativo y no constituye aprobación ni instrucción para actuar.
-
-## 8. Estructura del repositorio
+## 8. Estructura
 
 ```text
 README.md
@@ -75,21 +73,21 @@ corridas/
   corrida_01/
   corrida_02/
   corrida_03/
+  validacion_final/
 ```
 
-Cada corrida deberá conservar su entrada, salida, fecha, metadatos y evidencia del estado del envío para que un tercero pueda reconstruirla.
+Las primeras tres carpetas documentan las corridas exigidas y las dos iteraciones. `validacion_final/` conserva la prueba posterior con la orientación definitiva.
 
-## 9. Estado de validación
+## 9. Resultado
 
-- Contrato inicial redactado.
-- Automatización diaria configurada.
-- Gmail conectado y destinatario validado.
-- Primera corrida real: pendiente.
-- Segunda corrida real: pendiente.
-- Tercera corrida real: pendiente.
-- Análisis económico: pendiente de completar con mediciones reales.
-- Gobierno y riesgos: diseño inicial incorporado; validación final pendiente.
+- Corrida 1: envío exitoso, pero el Markdown llegó como texto sin procesar.
+- Iteración 1: se modificó únicamente el formato y el correo pasó a HTML.
+- Corrida 2: formato correcto, pero todavía había demasiado texto y una novedad institucional de baja utilidad.
+- Iteración 2: se ajustaron las restricciones de selección y síntesis.
+- Corrida 3: confirmó la mejora formal, aunque evidenció que el perfil seguía demasiado orientado a Operaciones.
+- Calibración final: se incorporó el puesto real de la destinataria como criterio rector, control de arrastre y bloque separado de innovación.
+- Validación final: recuperó la RG CNV 1165/2026, priorizó facturación e IIBB, incluyó una señal relevante de IA y excluyó altas de especies sin impacto directo.
 
-## 10. Criterio de éxito
+## 10. Limitaciones
 
-El sistema será considerado útil si detecta novedades relevantes sin inventar información, diferencia correctamente fuentes oficiales de señales periodísticas o sectoriales, conserva evidencia reconstruible y deja todas las decisiones profesionales bajo responsabilidad humana.
+El agente consulta web pública. Las circulares privadas, correos internos y áreas autenticadas requieren control humano. Una recomendación del reporte no prueba por sí sola que una norma resulte aplicable a la ALyC.
