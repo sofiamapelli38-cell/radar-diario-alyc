@@ -1,0 +1,9 @@
+{
+  "run_id": "RUN-20260906-0802",
+  "fecha_objetivo": "2026-09-05",
+  "ejecucion": "2026-09-06T08:02:00-03:00",
+  "hallazgos": 0,
+  "formato": "text/plain",
+  "estado_envio": "ENVIADO",
+  "resultado_iteracion": "falla_de_formato_detectada"
+}
