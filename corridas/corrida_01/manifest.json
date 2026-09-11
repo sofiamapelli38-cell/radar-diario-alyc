@@ -17,7 +17,7 @@
   },
   "input": {
     "path": "corridas/corrida_01/entrada_ejecutada.md",
-    "sha256": "5c76a2693e47b5e7bceacc07a38c1ddec056b858fb40ab5bf05ed6088d1f90dc"
+    "sha256": "87f94e876312bc2ac24311466c7909a9222bb75b53af5ca216c0268d9dfbdaff"
   },
   "output": {
     "path": "corridas/corrida_01/salida_original_redactada.txt",

@@ -24,6 +24,14 @@ class RadarAgentTests(unittest.TestCase):
         <h2>Control de cobertura</h2><a href='https://example.com'>Fuente</a></body></html>"""
         self.assertEqual(validate_html(html), [])
 
+    def test_no_findings_html_can_omit_links(self):
+        html = """<html><body><h1>Radar ALyC</h1>
+        <h2>Lo importante para tu trabajo</h2>
+        <h2>Impuestos, Contabilidad y regulación de la ALyC</h2>
+        <p>Sin novedades relevantes para la fecha.</p>
+        <h2>Control de cobertura</h2></body></html>"""
+        self.assertEqual(validate_html(html), [])
+
 
 if __name__ == "__main__":
     unittest.main()

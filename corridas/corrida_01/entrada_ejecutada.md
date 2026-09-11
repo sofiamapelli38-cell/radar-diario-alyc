@@ -22,7 +22,7 @@ Ejecutá el Radar Diario ALyC correspondiente a la fecha objetivo `2026-09-05`.
 - Generá la salida utilizando exactamente la estructura Markdown definida en el system prompt.
 - Asigná el identificador de corrida `RUN-20260906-0802`.
 - Enviá el reporte terminado mediante Gmail únicamente a la cuenta de Sofía configurada para esta ejecución.
-- Usá como asunto: `Radar ALyC | Novedades del {{FECHA_OBJETIVO_DDMMYYYY}}`.
+- Usá como asunto: `Radar ALyC | Novedades del 05/09/2026`.
 - Si el envío falla, no cambies el destinatario: conservá el reporte y registrá el error en `Estado del envío` y en `Control de calidad`.
 
 No ejecutes acciones derivadas de las novedades. El reporte debe quedar sujeto a revisión y firma de Sofía Mapelli.
@@ -30,7 +30,7 @@ No ejecutes acciones derivadas de las novedades. El reporte debe quedar sujeto a
 ## Variables de una corrida real
 
 - `2026-09-05`: fecha analizada en formato AAAA-MM-DD.
-- `{{FECHA_OBJETIVO_DDMMYYYY}}`: misma fecha en formato DD/MM/AAAA.
+- `05/09/2026`: misma fecha en formato DD/MM/AAAA.
 - `RUN-20260906-0802`: identificador único con formato RUN-AAAAMMDD-HHMM.
 
 La automatización debe completar estas variables en cada ejecución. Para las corridas entregadas en el repositorio, el archivo de entrada debe conservar los valores utilizados, sin dejar los marcadores sin reemplazar.

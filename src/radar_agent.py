@@ -60,8 +60,16 @@ def validate_html(report: str) -> list[str]:
     for heading in REQUIRED_HEADINGS:
         if heading.lower() not in lowered:
             errors.append(f"missing required section: {heading}")
-    if "<html" not in lowered or "<a " not in lowered:
-        errors.append("output must be HTML and contain at least one link")
+    if "<html" not in lowered:
+        errors.append("output must be HTML")
+    no_findings = (
+        "sin novedades relevantes" in lowered
+        or "sin hallazgos relevantes" in lowered
+    )
+    if "<a " not in lowered and not no_findings:
+        errors.append(
+            "output must contain at least one link unless it is a no-findings report"
+        )
     if re.search(r"(?:^|\n)#{1,3}\s", report):
         errors.append("visible Markdown heading detected")
     return errors
