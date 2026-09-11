@@ -5,5 +5,12 @@
   "hallazgos": 0,
   "formato": "text/plain",
   "estado_envio": "ENVIADO",
+  "agent_version": "V1",
+  "system_prompt": "prompts/versions/system_prompt_v1.md",
+  "user_prompt": "prompts/versions/user_prompt_v1.md",
+  "automation_config": "config/chatgpt_work_automation.json",
+  "input": "corridas/corrida_01/entrada.md",
+  "output": "corridas/corrida_01/salida.md",
+  "delivery_trace": "corridas/corrida_01/evidencia_envio.md",
   "resultado_iteracion": "falla_de_formato_detectada"
 }
