@@ -5,5 +5,12 @@
   "hallazgos": 3,
   "formato": "text/html",
   "estado_envio": "ENVIADO",
+  "agent_version": "V3",
+  "system_prompt": "prompts/versions/system_prompt_v3.md",
+  "user_prompt": "prompts/versions/user_prompt_v3.md",
+  "automation_config": "config/chatgpt_work_automation.json",
+  "input": "corridas/corrida_03/entrada.md",
+  "output": "corridas/corrida_03/salida.md",
+  "delivery_trace": "corridas/corrida_03/evidencia_envio.md",
   "resultado_iteracion": "seleccion_mas_breve_orientacion_aun_generica"
 }
