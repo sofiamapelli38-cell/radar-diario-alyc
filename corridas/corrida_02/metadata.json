@@ -1,0 +1,9 @@
+{
+  "run_id": "RUN-20260907-0805",
+  "fecha_objetivo": "2026-09-06",
+  "ejecucion": "2026-09-07T08:05:00-03:00",
+  "hallazgos": 3,
+  "formato": "text/html",
+  "estado_envio": "ENVIADO",
+  "resultado_iteracion": "formato_corregido_ruido_detectado"
+}
