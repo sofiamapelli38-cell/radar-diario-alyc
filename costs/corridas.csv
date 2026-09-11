@@ -1,0 +1,5 @@
+run_id,input_tokens_estimated,output_tokens_estimated,web_calls,input_usd_per_million,output_usd_per_million,web_usd_per_1000,cost_usd_estimated
+RUN-20260906-0802,15000,1021,10,0.20,1.20,10.00,0.104225
+RUN-20260907-0805,15000,2214,10,0.20,1.20,10.00,0.105657
+RUN-20260908-0758,15000,2122,10,0.20,1.20,10.00,0.105546
+RUN-20260911-0758,15000,2635,10,0.20,1.20,10.00,0.106162
