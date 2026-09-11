@@ -109,3 +109,40 @@ La destinataria evaluó que la función quedó alineada al 100 % con su objetivo
 | Página dinámica inaccesible | Búsqueda por título, fecha y palabras clave |
 | Aplicabilidad mal interpretada | Recomendación preliminar y validación humana |
 | Envío a terceros | Destinatario único configurado de forma privada |
+
+
+## DEC-006 - Publicar una implementación auditable
+
+**Fecha:** 11/09/2026  
+**Motivo:** los evaluadores detectaron que las corridas probaban funcionamiento, pero faltaba un artefacto técnico ejecutable.
+
+Se conservó la configuración real de ChatGPT Work y se agregó una réplica portátil en Python. La réplica usa Responses API con web search, valida HTML y ofrece envío Gmail con scope `gmail.send`. Se aclara que las corridas históricas fueron producidas por ChatGPT Work.
+
+**Evidencia:** `config/chatgpt_work_automation.json`, `src/radar_agent.py`, `tests/test_radar_agent.py`.
+
+## DEC-007 - Hacer reproducible cada corrida
+
+**Fecha:** 11/09/2026  
+**Motivo:** las entradas y salidas no vinculaban la versión exacta del contrato.
+
+Se agregaron V1, V2, V3 y V4 final. Cada metadata enlaza prompts, configuración, entrada, salida y traza de envío.
+
+**Evidencia:** `prompts/versions/` y los cuatro `metadata.json`.
+
+## DEC-008 - Separar costo real y equivalente API
+
+**Fecha:** 11/09/2026  
+**Motivo:** ChatGPT Work no expone tokens/modelo facturado por tarea; asignar un costo exacto hubiera sido inventado.
+
+Se declaró esa limitación y se creó un equivalente API estimado con supuestos, tarifas oficiales, fórmula, CSV y script. Se eligió Luna como alternativa costo-eficiente y se comparó con Terra, Sol y Astra.
+
+**Evidencia:** `ANALISIS_ECONOMICO.md`, `costs/corridas.csv`, `scripts/cost_estimator.py`.
+
+## DEC-009 - Operacionalizar permisos y contingencias
+
+**Fecha:** 11/09/2026  
+**Motivo:** la matriz de riesgos no indicaba cuándo detener, degradar o escalar.
+
+Se definieron allowlist de destinatario, operaciones Gmail permitidas/prohibidas, umbral de cobertura parcial, detención por datos sensibles, escalamiento tras dos fallas y kill switch.
+
+**Evidencia:** `GOVERNANCE.md`, `config/permissions.json`, `INCIDENTES.md`.
