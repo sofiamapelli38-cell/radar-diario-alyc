@@ -1,177 +1,111 @@
 # Decisiones e historia del proceso
 
-Este documento registra la evolución real del sistema **Radar Diario ALyC**. Se mantiene de forma incremental: las decisiones posteriores no reemplazan ni borran las anteriores.
+Este documento registra la evolución real del **Radar Diario ALyC**. Las fallas se conservan porque forman parte de la evidencia del aprendizaje.
 
-## Estado al 5 de septiembre de 2026
-
-El contrato inicial, la automatización y la integración con Gmail están configurados. Las tres corridas exigidas todavía no fueron completadas. Por lo tanto, este archivo distingue entre:
-
-- decisiones ya tomadas y verificables;
-- problemas observados en la experiencia anterior;
-- hipótesis que deberán validarse con las corridas reales.
-
-## DEC-001 - Continuar un caso real iniciado en la Entrega 1
+## DEC-001 - Continuar un problema real
 
 **Fecha:** 05/09/2026  
-**Pieza afectada:** contexto y alcance.
+**Pieza:** contexto.
 
-### Situación inicial
+Se continuó el caso de la Entrega 1: seguimiento de novedades para una ALyC. El objetivo fue convertir un prompt manual en un sistema con ejecución diaria, búsqueda web, Gmail y evidencia reconstruible.
 
-En la Entrega 1 se trabajó con un agente de seguimiento de novedades regulatorias, impositivas y operativas para una ALyC argentina. La tarea respondía a una necesidad real del área de Impuestos y Contabilidad, pero funcionaba principalmente como un contrato de prompts ejecutado manualmente.
-
-### Decisión
-
-Mantener el problema real y convertirlo en un sistema agéntico completo, con ejecución programada, búsqueda web, envío por Gmail, supervisión definida y evidencia reconstruible.
-
-### Motivo
-
-Partir de una necesidad ya probada permite dedicar el trabajo final a mejorar el sistema, sus controles y su trazabilidad, en lugar de inventar un caso nuevo.
-
-### Resultado esperado
-
-Pasar de un prompt aislado a un flujo diario que utilice herramientas reales y produzca evidencia comparable.
-
-## DEC-002 - Ampliar las fuentes más allá de los organismos oficiales
+## DEC-002 - Usar fuentes oficiales, profesionales y sectoriales
 
 **Fecha:** 05/09/2026  
-**Pieza afectada:** contexto.
+**Pieza:** contexto.
 
-### Problema observado
+El agente no debía limitarse a organismos oficiales. Se agregaron fuentes profesionales como Errepar y fuentes sectoriales para detectar cambios tecnológicos o competitivos. Las noticias funcionan como señales; una obligación normativa requiere respaldo oficial.
 
-El alcance centrado principalmente en organismos oficiales podía detectar normas y vencimientos, pero dejaba fuera novedades profesionales o competitivas. Por ejemplo, un lanzamiento tecnológico de una ALyC puede ser relevante para el negocio aunque no sea publicado por CNV, ARCA o BCRA.
-
-### Cambio realizado
-
-Se definieron tres grupos de fuentes:
-
-1. oficiales;
-2. periodísticas y profesionales;
-3. sectoriales, incluyendo publicaciones públicas de ALyCs, mercados y fintechs.
-
-Se incorporaron expresamente Errepar, iProfesional y El Cronista como ejemplos de fuentes profesionales o periodísticas.
-
-### Restricción agregada
-
-Las fuentes periodísticas y sectoriales se consideran señales y no normativa confirmada. Cuando mencionan una norma, el agente debe buscar la publicación oficial.
-
-### Impacto esperado
-
-Obtener un radar más útil para el trabajo diario sin confundir una noticia con una obligación normativa.
-
-## DEC-003 - Reemplazar “últimas 24 horas” por “día calendario anterior”
+## DEC-003 - Usar día calendario y no “últimas 24 horas”
 
 **Fecha:** 05/09/2026  
-**Pieza afectada:** tarea.
+**Pieza:** tarea.
 
-### Problema observado
+Cada ejecución toma el día anterior entre 00:00 y 23:59, hora argentina. Esto evita ventanas variables y permite comparar las corridas.
 
-La expresión `últimas 24 horas` depende de la hora exacta en la que se ejecuta la consulta. Si una corrida se retrasa o se adelanta, puede generar solapamientos o dejar publicaciones sin revisar. También dificulta que un tercero reconstruya el período analizado.
-
-### Cambio realizado
-
-Cada ejecución de las 08:00 analiza desde las 00:00 hasta las 23:59 del día calendario anterior en la zona horaria `America/Argentina/Buenos_Aires`.
-
-### Impacto esperado
-
-Que todas las corridas tengan una ventana temporal inequívoca, comparable y reproducible.
-
-## DEC-004 - Incorporar ejecución programada y envío real por Gmail
+## DEC-004 - Automatizar y enviar por Gmail
 
 **Fecha:** 05/09/2026  
-**Pieza afectada:** herramientas y tarea.
+**Pieza:** herramientas y tarea.
 
-### Situación inicial
+Se programó la ejecución diaria a las 08:00 y el envío a una única cuenta privada validada. La dirección y las credenciales no se publican.
 
-La Entrega 1 requería que Sofía iniciara manualmente cada relevamiento y guardara la respuesta.
-
-### Cambio realizado
-
-Se configuró una automatización diaria a las 08:00, hora argentina, y se conectó Gmail para enviar el reporte únicamente a la cuenta validada de Sofía.
-
-### Control de privacidad
-
-La dirección completa y las credenciales no se publican en el repositorio. El contrato identifica a la destinataria por su rol y la configuración privada conserva el dato operativo.
-
-### Evidencia pendiente
-
-La primera ejecución real y el primer email deberán guardarse en `corridas/corrida_01/`. Hasta que eso ocurra, no se declara validado el envío de punta a punta.
-
-## DEC-005 - Separar automatización de decisión profesional
+## DEC-005 - Separar automatización y decisión profesional
 
 **Fecha:** 05/09/2026  
-**Pieza afectada:** restricciones y gobierno.
+**Pieza:** restricciones y gobierno.
 
-### Riesgo identificado
+El agente opera en L3 para buscar, redactar y enviar; en L1 para recomendar; y en L0 para cualquier presentación, registración, cambio operativo o comunicación. La responsable final es Sofía Mapelli.
 
-Un resumen generado automáticamente puede equivocarse en la aplicabilidad de una norma, un vencimiento o una acción recomendada. También podría reenviarse fuera de contexto.
+## Iteración 1 - Corregir la presentación del correo
 
-### Cambio realizado
+**Falla observada en la Corrida 1 (06/09):**
 
-- **L3:** el agente busca, filtra, clasifica, redacta y envía el informe a Sofía para revisión posterior.
-- **L1:** las interpretaciones, prioridades y acciones sugeridas son recomendaciones preliminares.
-- **L0:** Sofía conserva las decisiones, presentaciones, registraciones, cambios operativos y comunicaciones a terceros.
+> El correo mostraba `#`, `##`, guiones y separadores de tabla como texto. La tabla de trece columnas no se renderizó y los enlaces se mezclaban con el Markdown.
 
-### Responsable final
+La cabecera técnica confirmó `Content-Type: text/plain`.
 
-Sofía Mapelli revisa y firma cualquier uso profesional del reporte. El email automático es informativo y no constituye una instrucción para actuar.
+**Pieza modificada:** formato, y solamente formato.
 
-## DEC-006 - Fijar un formato estricto y comparable
+**Cambio:**
 
-**Fecha:** 05/09/2026  
-**Pieza afectada:** formato.
+- enviar HTML real con estilos compatibles con Gmail;
+- reducir la tabla a seis columnas;
+- usar prioridades visuales;
+- mostrar enlaces clicables;
+- omitir una tabla vacía cuando no haya novedades.
 
-### Problema observado
+**Resultado en la Corrida 2 (07/09):**
 
-Una salida narrativa puede resultar clara para leer, pero dificulta comparar corridas y detectar si faltan datos esenciales.
+La cabecera pasó a `Content-Type: text/html; charset=UTF-8`. Gmail mostró encabezado, colores, tabla y tres enlaces clicables. El envío de punta a punta quedó validado.
 
-### Cambio realizado
+## Iteración 2 - Reducir ruido y extensión
 
-Se definieron cinco secciones obligatorias y una tabla con columnas fijas. La salida incluye datos de la corrida, resumen ejecutivo, novedades, control de calidad y supervisión humana.
+**Falla observada en la Corrida 2:**
 
-También se estableció que una corrida sin novedades debe conservar toda la estructura y no inventar contenido para completar la tabla.
+> La tabla todavía concentraba párrafos largos en seis columnas y agregó la versión en inglés de los resultados de BYMA, una actualización institucional sin impacto práctico.
 
-### Impacto esperado
+**Pieza modificada:** restricciones y criterios de relevancia.
 
-Permitir la comparación entre días y facilitar la corrección automática del repositorio.
+**Cambio:**
 
-## DEC-007 - Incorporar controles contra errores de búsqueda y clasificación
+- máximo cinco novedades;
+- excluir traducciones, promoción y contenido institucional sin impacto;
+- resumir cada novedad en hasta tres líneas;
+- exigir “qué pasó, por qué importa y qué conviene hacer”.
 
-**Fecha:** 05/09/2026  
-**Pieza afectada:** restricciones.
+**Resultado en la Corrida 3 (08/09):**
 
-### Riesgos identificados
+El agente incluyó tres novedades, evitó completar con actualizaciones adicionales de baja utilidad y mantuvo el HTML estable. La mejora fue parcial: el reporte seguía priorizando asuntos de Operaciones —cuentas comitentes, un cambio de ratio de CEDEAR y recompra de ON— por encima del trabajo cotidiano de Impuestos y Contabilidad.
 
-- confundir la fecha de una noticia con la fecha de una norma citada;
-- presentar una nota periodística como confirmación oficial;
-- duplicar el mismo hecho publicado por varios medios;
-- incluir una publicación sin fecha verificable;
-- completar el reporte con noticias generales sin relevancia concreta.
+## Calibración posterior - Orientar el agente al puesto real
 
-### Controles incorporados
+**Problema detectado después de las tres corridas:**
 
-- verificación de la fecha de publicación;
-- prioridad para el enlace original y oficial;
-- estados de validación explícitos;
-- consolidación de duplicados;
-- sección obligatoria de control de calidad;
-- exclusión de información cuya relevancia no pueda explicarse.
+El radar omitió la RG CNV 1165/2026 sobre Matriz de Compatibilidades y una noticia relevante sobre lineamientos para IA, mientras informaba altas de especies, CEDEARs y eventos de emisores. El criterio era válido para una ALyC en general, pero no para la destinataria.
 
-## Plan de calibración con las corridas reales
+**Decisión final:**
 
-Después de cada ejecución se registrará:
+- convertir el perfil “Impuestos y Contabilidad de una ALyC” en el criterio principal;
+- priorizar CNV, ARCA, fiscos, UIF, contabilidad, auditoría, AIF y aspectos societarios;
+- agregar un control de arrastre de tres días hábiles;
+- separar hasta cuatro novedades principales de una única noticia de sector e innovación;
+- excluir información operativa sin consecuencia contable, impositiva o regulatoria concreta;
+- exigir búsquedas alternativas cuando Errepar, AIF u otra página dinámica no pueda abrirse.
 
-| Corrida | Qué se controlará | Estado |
-|---|---|---|
-| 01 | Cobertura, respeto de fecha, enlaces, formato y envío | Pendiente |
-| 02 | Corrección de la primera falla textual mediante un solo cambio | Pendiente |
-| 03 | Efecto de la segunda iteración y estabilidad del formato | Pendiente |
+## Validación final - Corrida del 11/09
 
-Para cada iteración se conservarán el texto que falló, la pieza del contrato modificada y el efecto observable en la corrida siguiente. No se describirá una mejora como `quedó mejor` sin señalar evidencia concreta.
+La salida sobre el 10/09 recuperó la RG CNV 1165/2026, incorporó un control de facturación de ARCA, una prórroga de AGIP y una señal de IA útil para política interna. También explicó el impacto indirecto de una comunicación BCRA y documentó las exclusiones.
 
-## Decisiones todavía pendientes
+La destinataria evaluó que la función quedó alineada al 100 % con su objetivo. Por eso se congeló el criterio de búsqueda y selección: los cambios futuros deberán considerarse mantenimiento, no una nueva iteración del contrato.
 
-- Medir tokens de entrada y salida de las corridas reales.
-- Confirmar el modelo utilizado y su tarifa vigente al momento del cálculo.
-- Calcular costo por corrida, semanal y anual.
-- Registrar fallas reales de acceso, búsqueda o envío.
-- Completar la matriz final de riesgos con evidencia de las tres ejecuciones.
+## Matriz breve de riesgos
+
+| Riesgo | Control |
+|---|---|
+| Omitir una norma relevante | Arrastre de tres días hábiles y control previo por organismo/tema |
+| Confundir noticia con norma | Enlace oficial y estado de validación |
+| Incluir ruido operativo | Prioridad por puesto y exclusiones expresas |
+| Página dinámica inaccesible | Búsqueda por título, fecha y palabras clave |
+| Aplicabilidad mal interpretada | Recomendación preliminar y validación humana |
+| Envío a terceros | Destinatario único configurado de forma privada |
