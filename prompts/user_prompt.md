@@ -1,24 +1,15 @@
-# User prompt - Ejecución diaria
+# User prompt - Ejecución diaria (versión final)
 
-Ejecutá el Radar Diario ALyC correspondiente a la fecha objetivo `{{FECHA_OBJETIVO}}`.
+Ejecutá el Radar Diario ALyC.
 
-## Pedido puntual
+- Fecha principal: `{{FECHA_OBJETIVO}}`, de 00:00 a 23:59 en `America/Argentina/Buenos_Aires`.
+- Ventana de arrastre: `{{ARRASTRE_DESDE}}` a `{{ARRASTRE_HASTA}}`.
+- Identificador: `{{RUN_ID}}`.
+- Revisá los correos anteriores con asunto “Radar ALyC” para recuperar omisiones y evitar duplicados.
+- Aplicá el perfil, prioridades, exclusiones y control previo del system prompt.
+- Generá el correo en HTML real, con asunto `Radar ALyC | Novedades del {{FECHA_DDMMYYYY}}`.
+- Enviá únicamente a la cuenta privada de Sofía configurada en la automatización.
+- Si falla una fuente, declaralo. Si falla Gmail, conservá el resultado y no cambies el destinatario.
+- No ejecutes ninguna acción derivada de las novedades.
 
-- Considerá exclusivamente publicaciones realizadas entre las 00:00 y las 23:59 de `{{FECHA_OBJETIVO}}`, según la zona horaria `America/Argentina/Buenos_Aires`.
-- Relevá fuentes oficiales, periodísticas/profesionales y sectoriales definidas en el system prompt.
-- Verificá las fechas, eliminá duplicados, buscá respaldo oficial y evaluá la relevancia concreta de cada hallazgo para una ALyC argentina.
-- Generá la salida utilizando exactamente la estructura Markdown definida en el system prompt.
-- Asigná el identificador de corrida `{{RUN_ID}}`.
-- Enviá el reporte terminado mediante Gmail únicamente a la cuenta de Sofía configurada para esta ejecución.
-- Usá como asunto: `Radar ALyC | Novedades del {{FECHA_OBJETIVO_DDMMYYYY}}`.
-- Si el envío falla, no cambies el destinatario: conservá el reporte y registrá el error en `Estado del envío` y en `Control de calidad`.
-
-No ejecutes acciones derivadas de las novedades. El reporte debe quedar sujeto a revisión y firma de Sofía Mapelli.
-
-## Variables de una corrida real
-
-- `{{FECHA_OBJETIVO}}`: fecha analizada en formato AAAA-MM-DD.
-- `{{FECHA_OBJETIVO_DDMMYYYY}}`: misma fecha en formato DD/MM/AAAA.
-- `{{RUN_ID}}`: identificador único con formato RUN-AAAAMMDD-HHMM.
-
-La automatización debe completar estas variables en cada ejecución. Para las corridas entregadas en el repositorio, el archivo de entrada debe conservar los valores utilizados, sin dejar los marcadores sin reemplazar.
+Sofía Mapelli valida las conclusiones y la aplicabilidad antes de actuar.
