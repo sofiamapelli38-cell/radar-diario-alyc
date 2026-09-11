@@ -91,3 +91,29 @@ Las primeras tres carpetas documentan las corridas exigidas y las dos iteracione
 ## 10. Limitaciones
 
 El agente consulta web pública. Las circulares privadas, correos internos y áreas autenticadas requieren control humano. Una recomendación del reporte no prueba por sí sola que una norma resulte aplicable a la ALyC.
+
+
+## 11. Implementación y reproducción técnica
+
+La producción usa una tarea programada de ChatGPT Work; su configuración auditable está en [config/chatgpt_work_automation.json](config/chatgpt_work_automation.json). El repositorio incluye además una réplica portátil ejecutable en [src/radar_agent.py](src/radar_agent.py), con búsqueda web mediante Responses API, validación del HTML y envío opcional por Gmail API con scope `gmail.send`.
+
+Pruebas:
+
+```bash
+python -m unittest discover -s tests -v
+python scripts/cost_estimator.py costs/corridas.csv
+```
+
+La ejecución API requiere variables privadas descriptas en `.env.example`. No se incluyen credenciales.
+
+## 12. Trazabilidad exacta
+
+Cada `metadata.json` identifica versión del agente, rutas de system/user prompt, configuración, entrada, salida y evidencia del envío. La matriz está en [prompts/versions/README.md](prompts/versions/README.md). Los cuerpos completos permanecen en Gmail por privacidad; el repositorio conserva las salidas académicas y los identificadores técnicos necesarios.
+
+## 13. Economía y gobierno
+
+- [ANALISIS_ECONOMICO.md](ANALISIS_ECONOMICO.md): costo estimado por corrida, fórmula, proyección y comparación de modelos.
+- [costs/corridas.csv](costs/corridas.csv) y [scripts/cost_estimator.py](scripts/cost_estimator.py): cálculo reproducible.
+- [GOVERNANCE.md](GOVERNANCE.md): mínimo privilegio, responsables, contingencias, degradación y kill switch.
+- [config/permissions.json](config/permissions.json): operaciones permitidas y prohibidas.
+- [INCIDENTES.md](INCIDENTES.md): registro operativo.
