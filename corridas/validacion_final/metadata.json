@@ -11,5 +11,12 @@
   "innovacion": 1,
   "formato": "text/html",
   "estado_envio": "ENVIADO",
+  "agent_version": "V4-final",
+  "system_prompt": "prompts/versions/system_prompt_v4_final.md",
+  "user_prompt": "prompts/versions/user_prompt_v4_final.md",
+  "automation_config": "config/chatgpt_work_automation.json",
+  "input": "corridas/validacion_final/entrada.md",
+  "output": "corridas/validacion_final/salida.md",
+  "delivery_trace": "corridas/validacion_final/evidencia_envio.md",
   "validacion_usuario": "alineado_100_por_ciento"
 }
