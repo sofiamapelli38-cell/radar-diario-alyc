@@ -102,13 +102,14 @@ Pruebas:
 ```bash
 python -m unittest discover -s tests -v
 python scripts/cost_estimator.py costs/corridas.csv
+python scripts/verify_run_manifests.py
 ```
 
 La ejecución API requiere variables privadas descriptas en `.env.example`. No se incluyen credenciales.
 
 ## 12. Trazabilidad exacta
 
-Cada `metadata.json` identifica versión del agente, rutas de system/user prompt, configuración, entrada, salida y evidencia del envío. La matriz está en [prompts/versions/README.md](prompts/versions/README.md). Los cuerpos completos permanecen en Gmail por privacidad; el repositorio conserva las salidas académicas y los identificadores técnicos necesarios.
+Cada corrida conserva un `manifest.json` con blobs Git inmutables de los prompts, entrada ejecutada, snapshot de configuración, salida original anonimizada y hashes SHA-256. La matriz está en [REPRODUCIBILIDAD.md](REPRODUCIBILIDAD.md). No se publican encabezados ni metadatos privados del buzón; en los cuerpos autorizados sólo se reemplazó la dirección exacta por `[CUENTA_PRIVADA]`.
 
 ## 13. Economía y gobierno
 
@@ -117,3 +118,4 @@ Cada `metadata.json` identifica versión del agente, rutas de system/user prompt
 - [GOVERNANCE.md](GOVERNANCE.md): mínimo privilegio, responsables, contingencias, degradación y kill switch.
 - [config/permissions.json](config/permissions.json): operaciones permitidas y prohibidas.
 - [INCIDENTES.md](INCIDENTES.md): registro operativo.
+- [REPRODUCIBILIDAD.md](REPRODUCIBILIDAD.md): reconstrucción exacta e integridad de las corridas.

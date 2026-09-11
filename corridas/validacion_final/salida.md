@@ -6,7 +6,7 @@
 - 🔴 Facturación: validar que “condición frente al IVA del receptor” viaje correctamente antes del 01/12.
 - 🟡 CABA: la adecuación para discriminar IIBB se prorrogó al 01/01/2027.
 
-## Impuestos, Contabilidad y regulación
+## Impuestos, Contabilidad y regulación de la ALyC
 
 | Fecha/fuente | Qué cambió | Impacto para el área | Prioridad/acción | Fuentes |
 |---|---|---|---|---|

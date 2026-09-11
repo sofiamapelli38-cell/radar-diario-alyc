@@ -1,0 +1,46 @@
+# Radar ALyC | Novedades del 05/09/2026
+
+## 1. Datos de la corrida
+
+- ID: RUN-20260906-0802
+- Fecha/hora de ejecución: 06/09/2026 08:02 (hora de Argentina)
+- Período relevado: 05/09/2026, de 00:00 a 23:59 (America/Argentina/Buenos_Aires)
+- Fuentes oficiales consultadas: CNV, ARCA, UIF, BCRA, BYMA, MAE, MAV, Caja de Valores, Boletín Oficial de la República Argentina y Argentina.gob.ar/Normativa.
+- Fuentes periodísticas consultadas: Errepar, iProfesional, El Cronista, Ámbito, iProUP y otros resultados económicos/financieros pertinentes.
+- Fuentes sectoriales consultadas: publicaciones públicas y secciones de novedades de BYMA, MAE, MAV, Caja de Valores, ALyCs y fintechs argentinas.
+- Fuentes no accesibles: algunas secciones dinámicas o no indexadas de MAE, MAV, Caja de Valores y Errepar no permitieron verificar exhaustivamente publicaciones por fecha.
+- Cantidad de novedades: 0.
+- Estado del envío: enviado automáticamente por Gmail únicamente a [CUENTA_PRIVADA].
+
+## 2. Resumen ejecutivo
+
+- Novedades urgentes: ninguna identificada.
+- Acciones o revisiones: ninguna derivada de publicaciones fechadas el 05/09/2026.
+- Riesgos: ninguno nuevo confirmado dentro del período.
+- Oportunidades o innovaciones: ninguna publicación sectorial relevante y verificable dentro del período.
+- Actualizaciones sin acción inmediata: ninguna que cumpla simultáneamente con los criterios de fecha, relevancia concreta para una ALyC y fuente verificable.
+
+El 05/09/2026 fue sábado. No se identificaron nuevas normas, comunicaciones oficiales, cambios operativos ni anuncios sectoriales con impacto concreto para una ALyC argentina publicados dentro de ese día calendario.
+
+## 3. Novedades
+
+| ID | Tipo de fuente | Organismo o empresa | Fecha | Título | Resumen en criollo | Relevancia para una ALyC | Clasificación | Prioridad | Acción sugerida | Vencimiento | Validación | Fuente |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| — | — | — | 05/09/2026 | Sin novedades relevantes confirmadas | No aparecieron publicaciones que cumplieran todos los criterios del radar. | Sin impacto nuevo identificado. | ACTUALIZACIÓN | BAJA | No se requiere acción. Retomar el control en la próxima corrida. | No aplica | Se revisaron fuentes oficiales, periodísticas y sectoriales; no hubo hallazgos incorporables. | [CNV](https://www.argentina.gob.ar/cnv) · [BCRA](https://www.bcra.gob.ar/) · [Boletín Oficial](https://www.boletinoficial.gob.ar/) · [BYMA](https://www.byma.com.ar/) |
+
+## 4. Control de calidad
+
+- Contradicciones: no se detectaron, porque no hubo novedades incorporadas.
+- Noticias sin respaldo oficial: se localizaron notas generales de mercado, cotizaciones y contenidos publicados o visibles el 05/09/2026, pero fueron excluidos por no implicar un cambio normativo, operativo o sectorial concreto para una ALyC.
+- Hallazgos excluidos por fecha no verificable: resultados cuyo sitio mostraba la fecha corriente en la cabecera, pero no una fecha de publicación inequívoca del artículo.
+- Limitaciones de acceso: ciertas páginas dinámicas y contenidos no indexados impidieron asegurar cobertura exhaustiva de MAE, MAV, Caja de Valores y Errepar.
+- Duplicados consolidados: no hubo duplicados relevantes.
+- Verificación temporal: el Boletín Oficial mostraba como última edición disponible la del 04/09/2026, por lo que no se computó una edición oficial del sábado 05/09/2026.
+
+## 5. Supervisión humana requerida
+
+Sofía debe revisar especialmente cualquier comunicación interna, circular privada, aviso operativo recibido por correo o novedad publicada en áreas autenticadas de mercados y depositarias, porque esos canales no forman parte de la web pública relevada.
+
+No debe ejecutarse automáticamente ninguna presentación ante CNV/UIF/ARCA, cambio en sistemas, modificación de parámetros, comunicación a clientes, operación de mercado ni decisión de cumplimiento basada en este correo.
+
+La responsable final de validar el alcance, determinar acciones y autorizar cualquier implementación es Sofía Mapelli.

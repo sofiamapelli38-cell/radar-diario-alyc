@@ -8,9 +8,18 @@
   "agent_version": "V3",
   "system_prompt": "prompts/versions/system_prompt_v3.md",
   "user_prompt": "prompts/versions/user_prompt_v3.md",
-  "automation_config": "config/chatgpt_work_automation.json",
+  "automation_config": "config/versions/automation_v3.json",
   "input": "corridas/corrida_03/entrada.md",
   "output": "corridas/corrida_03/salida.md",
   "delivery_trace": "corridas/corrida_03/evidencia_envio.md",
-  "resultado_iteracion": "seleccion_mas_breve_orientacion_aun_generica"
+  "resultado_iteracion": "seleccion_mas_breve_orientacion_aun_generica",
+  "agent_ref": {
+    "system_prompt_git_blob_sha": "a97a7b742b25296425a91cb7f9c0871734911fdb",
+    "user_prompt_git_blob_sha": "766df7ff888e3c3ea14ef2e3df5d172473e84527",
+    "audit_base_commit": "c6953cc36657e358ac7997805dbf0c44b7502b46"
+  },
+  "input_executed": "corridas/corrida_03/entrada_ejecutada.md",
+  "output_original_redacted": "corridas/corrida_03/salida_original_redactada.html",
+  "manifest": "corridas/corrida_03/manifest.json",
+  "output_status": "resumen_academico; ver output_original_redacted para el cuerpo exacto anonimizado"
 }

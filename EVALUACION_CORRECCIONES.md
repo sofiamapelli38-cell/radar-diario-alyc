@@ -6,7 +6,7 @@ Esta tabla vincula cada descuento observado con evidencia concreta del repositor
 |---|---|---|
 | SC-02 - Herramienta o conector real | Configuración real de ChatGPT Work y réplica ejecutable con web search y Gmail | [configuración](config/chatgpt_work_automation.json), [script](src/radar_agent.py), [trazas](corridas/) |
 | D1 - Sistema ejecutable | Código, dependencias, variables de entorno y pruebas | [src](src/radar_agent.py), [requirements](requirements.txt), [.env.example](.env.example), [tests](tests/) |
-| FR-03 - Reproducibilidad exacta | Cuatro versiones de system/user prompt y metadata con rutas exactas | [versiones](prompts/versions/), [metadata corrida 1](corridas/corrida_01/metadata.json), [metadata corrida 2](corridas/corrida_02/metadata.json), [metadata corrida 3](corridas/corrida_03/metadata.json), [validación](corridas/validacion_final/metadata.json) |
+| FR-03 - Reproducibilidad exacta | Blobs Git de prompts, entradas resueltas, configuración versionada, salidas originales anonimizadas y manifiestos con hashes | [procedimiento](REPRODUCIBILIDAD.md), [versiones](prompts/versions/), [manifiestos](corridas/) |
 | PD - Trazabilidad de decisiones | Cada corrección nueva tiene ID, motivo y artefactos | [DECISIONES.md](DECISIONES.md) |
 | AE-01 - Costo por corrida | Estimación API por corrida, moneda, supuestos, tarifas y fórmula | [análisis](ANALISIS_ECONOMICO.md), [datos](costs/corridas.csv) |
 | AE-02 - Proyección | Frecuencia diaria, horizonte mensual/anual y aritmética ejecutable | [análisis](ANALISIS_ECONOMICO.md), [calculadora](scripts/cost_estimator.py) |
@@ -17,4 +17,4 @@ Esta tabla vincula cada descuento observado con evidencia concreta del repositor
 
 ## Nota sobre privacidad
 
-Las salidas académicas y trazas de envío están en el repositorio. Los cuerpos privados completos permanecen en Gmail; no se publican credenciales, dirección privada ni contenido del conector. Esta decisión no impide reconstruir fecha, entrada, contrato, configuración, salida y estado de cada corrida.
+Con autorización expresa, las copias del cuerpo original se publican reemplazando únicamente la dirección exacta por `[CUENTA_PRIVADA]`. No se publican encabezados, metadatos privados, tokens ni credenciales.

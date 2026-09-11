@@ -3,6 +3,7 @@
   "fecha_objetivo": "2026-09-10",
   "arrastre": [
     "2026-09-07",
+    "2026-09-08",
     "2026-09-09"
   ],
   "ejecucion": "2026-09-11T07:58:00-03:00",
@@ -14,9 +15,18 @@
   "agent_version": "V4-final",
   "system_prompt": "prompts/versions/system_prompt_v4_final.md",
   "user_prompt": "prompts/versions/user_prompt_v4_final.md",
-  "automation_config": "config/chatgpt_work_automation.json",
+  "automation_config": "config/versions/automation_v4_final.json",
   "input": "corridas/validacion_final/entrada.md",
   "output": "corridas/validacion_final/salida.md",
   "delivery_trace": "corridas/validacion_final/evidencia_envio.md",
-  "validacion_usuario": "alineado_100_por_ciento"
+  "validacion_usuario": "alineado_100_por_ciento",
+  "agent_ref": {
+    "system_prompt_git_blob_sha": "dd4e68704df522ba5c5958d991a9735239881029",
+    "user_prompt_git_blob_sha": "0d844c8ff4bd868b0a6552abbede5a0aebf548fd",
+    "audit_base_commit": "c6953cc36657e358ac7997805dbf0c44b7502b46"
+  },
+  "input_executed": "corridas/validacion_final/entrada_ejecutada.md",
+  "output_original_redacted": "corridas/validacion_final/salida_original_redactada.html",
+  "manifest": "corridas/validacion_final/manifest.json",
+  "output_status": "resumen_academico; ver output_original_redacted para el cuerpo exacto anonimizado"
 }

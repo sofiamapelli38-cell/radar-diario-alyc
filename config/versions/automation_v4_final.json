@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "snapshot_id": "AUTOMATION-V4-final",
+  "run_id": "RUN-20260911-0758",
+  "platform": "ChatGPT Work scheduled task",
+  "title": "Radar diario ALyC",
+  "timezone": "America/Argentina/Buenos_Aires",
+  "schedule_ical": "BEGIN:VEVENT\nDTSTART;TZID=America/Argentina/Buenos_Aires:20260906T080000\nRRULE:FREQ=DAILY\nEND:VEVENT",
+  "timing_mode": "exact_schedule",
+  "system_prompt": "prompts/versions/system_prompt_v4_final.md",
+  "user_prompt": "prompts/versions/user_prompt_v4_final.md",
+  "output_format": "HTML compatible con Gmail",
+  "selection_profile": "Impuestos y Contabilidad de una ALyC; arrastre de 3 días hábiles",
+  "tools": [
+    "public web search",
+    "Gmail connector"
+  ],
+  "recipient": "private allowlisted owner account",
+  "snapshot_status": "historical configuration reconstructed from versioned contract and documented delivery trace; the platform did not expose a raw versioned task export"
+}

@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "run_id": "RUN-20260911-0758",
+  "production_platform": "ChatGPT Work scheduled task",
+  "contract_version": "V4-final",
+  "agent_ref": {
+    "system_prompt_path": "prompts/versions/system_prompt_v4_final.md",
+    "system_prompt_git_blob_sha": "dd4e68704df522ba5c5958d991a9735239881029",
+    "user_prompt_path": "prompts/versions/user_prompt_v4_final.md",
+    "user_prompt_git_blob_sha": "0d844c8ff4bd868b0a6552abbede5a0aebf548fd",
+    "evidence_audit_base_commit": "c6953cc36657e358ac7997805dbf0c44b7502b46"
+  },
+  "automation": {
+    "path": "config/versions/automation_v4_final.json",
+    "sha256": "d48820f2e45c8d4a6563d237ce44d3ff22f462435eb9f38ce33864ab1f955819",
+    "status": "historical configuration reconstructed from versioned contract and documented delivery trace; the platform did not expose a raw versioned task export"
+  },
+  "input": {
+    "path": "corridas/validacion_final/entrada_ejecutada.md",
+    "sha256": "8e87da9e65d60123e6dd46104fbe47d89aa709df3175508cb5f3c1abf250b519"
+  },
+  "output": {
+    "path": "corridas/validacion_final/salida_original_redactada.html",
+    "sha256": "6d13876ecc17f9654d1f3e52b600401a131a51a33109dae5b5884c04f1e53f72",
+    "privacy_transformation": "Only the exact private email address was replaced with [CUENTA_PRIVADA]. No report content was rewritten.",
+    "publication_authorization": "Expressly authorized by the repository owner on 2026-09-11."
+  },
+  "academic_summary": "corridas/validacion_final/salida.md",
+  "delivery_trace": "corridas/validacion_final/evidencia_envio.md",
+  "evidence_status": "Original report body preserved with deterministic privacy redaction."
+}

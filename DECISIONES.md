@@ -146,3 +146,14 @@ Se declaró esa limitación y se creó un equivalente API estimado con supuestos
 Se definieron allowlist de destinatario, operaciones Gmail permitidas/prohibidas, umbral de cobertura parcial, detención por datos sensibles, escalamiento tras dos fallas y kill switch.
 
 **Evidencia:** `GOVERNANCE.md`, `config/permissions.json`, `INCIDENTES.md`.
+
+## DEC-010 - Cerrar la reproducibilidad exacta de las corridas
+
+**Fecha:** 11/09/2026  
+**Motivo:** el evaluador V5 no pudo verificar conjuntamente versión exacta, entrada resuelta, configuración relevante y salida original.
+
+Con autorización expresa de la titular se publicaron los cuerpos originales de los cuatro reportes, reemplazando únicamente la dirección exacta por `[CUENTA_PRIVADA]` y excluyendo encabezados y metadatos privados. Se agregaron blobs Git de prompts, entradas ejecutadas, snapshots versionados, manifiestos con hashes y un verificador automático.
+
+La discrepancia horaria de la Corrida 2 se preservó como no resuelta; no se inventó una corrección. También se completó el rango de arrastre final y se alineó el validador con el caso legítimo sin novedades.
+
+**Evidencia:** `REPRODUCIBILIDAD.md`, `corridas/*/manifest.json`, `config/versions/`, `scripts/verify_run_manifests.py`.
