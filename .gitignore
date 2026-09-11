@@ -1,0 +1,10 @@
+# Secrets and local credentials
+.env
+token.json
+credentials.json
+*.secret.json
+
+# Generated files
+output/
+__pycache__/
+*.pyc
